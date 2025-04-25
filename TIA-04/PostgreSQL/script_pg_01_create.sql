@@ -52,7 +52,7 @@ CREATE TABLE tipo_proyecto (
 
 CREATE TABLE entregable (
     id_entregable SERIAL,
-    id_tipo_entregable VARCHAR(30),
+    id_tipo_entregable INT,
     descripcion TEXT
 );
 
@@ -66,6 +66,11 @@ CREATE TABLE linea_de_investigacion (
     id_linea SERIAL,
     linea_investigacion VARCHAR(30),
     descripcion TEXT
+);
+
+CREATE TABLE linea_de_investigacion_proyecto (
+    id_linea INT,
+    id_proyecto INT
 );
 
 CREATE TABLE profesor (
@@ -151,7 +156,7 @@ CREATE TABLE prestamo_insumo (
     id_prestamo SERIAL,
     id_insumo INT,
     id_proyecto INT,
-    id_universidad VARCHAR(30),
+    id_universidad INT,
     fecha_entrega DATE,
     fecha_aprox_devolucion DATE,
     fecha_devolucion DATE,
@@ -226,3 +231,4 @@ CREATE TABLE taller_proyecto (
     id_proyecto INT,
     id_taller INT
 );
+

@@ -2,14 +2,14 @@ CREATE TABLE proyecto (
     id_proyecto BIGINT IDENTITY(1,1),
     id_tipo BIGINT,
     titulo VARCHAR(50),
-    descripcion VARCHAR(650),
+    descripcion VARCHAR(255),
     fecha_inscripcion DATE
 );
 
 CREATE TABLE evaluacion (
     id_evaluacion BIGINT IDENTITY(1,1),
     puntaje DECIMAL(5,2),
-    comentario VARCHAR(650),
+    comentario VARCHAR(255),
     id_proyecto BIGINT,
     id_usuario BIGINT
 );
@@ -28,7 +28,7 @@ CREATE TABLE asignatura (
 CREATE TABLE era (
     id_era BIGINT IDENTITY(1,1),
     id_asignatura BIGINT,
-    descripcion VARCHAR(650)
+    descripcion VARCHAR(255)
 );
 
 CREATE TABLE curso (
@@ -52,19 +52,19 @@ CREATE TABLE tipo_proyecto (
 CREATE TABLE entregable (
     id_entregable BIGINT IDENTITY(1,1),
     id_tipo_entregable BIGINT,
-    descripcion VARCHAR(650)
+    descripcion VARCHAR(255)
 );
 
 CREATE TABLE tipo_entregable (
     id_tipo_entregable BIGINT IDENTITY(1,1),
     tipo_entregable VARCHAR(30),
-    descripcion VARCHAR(650)
+    descripcion VARCHAR(255)
 );
 
 CREATE TABLE linea_de_investigacion (
     id_linea BIGINT IDENTITY(1,1),
     linea_investigacion VARCHAR(30),
-    descripcion VARCHAR(650)
+    descripcion VARCHAR(255)
 );
 
 CREATE TABLE profesor (
@@ -89,29 +89,29 @@ CREATE TABLE estudiante (
 CREATE TABLE usuario (
     id_usuario BIGINT IDENTITY(1,1),
     correo VARCHAR(100),
-    contrasena VARCHAR(64)
+    contrasena VARCHAR(255)
 );
 
 CREATE TABLE rol (
-    id_rol INT IDENTITY(1,1),
+    id_rol BIGINT IDENTITY(1,1),
     rol VARCHAR(50),
-    id_permiso INT
+    id_permiso BIGINT
 );
 
 CREATE TABLE permiso (
-    id_permiso INT IDENTITY(1,1),
-    crear BIT DEFAULT 0,
-    leer BIT DEFAULT 0,
-    actualizar BIT DEFAULT 0,
-    borrar BIT DEFAULT 0,
-    leer_nota BIT DEFAULT 0,
-    actualizar_nota BIT DEFAULT 0
+    id_permiso BIGINT IDENTITY(1,1),
+    crear BIT,
+    leer BIT,
+    actualizar BIT,
+    borrar BIT,
+    leer_nota BIT,
+    actualizar_nota BIT
 );
 
 CREATE TABLE usuario_proyecto_rol (
     id_proyecto BIGINT,
     id_usuario BIGINT,
-    id_rol INT
+    id_rol BIGINT
 );
 
 CREATE TABLE curso_proyecto (
@@ -132,7 +132,7 @@ CREATE TABLE linea_investigacion_proyecto (
 CREATE TABLE ira (
     id_ira BIGINT IDENTITY(1,1),
     id_asignatura BIGINT,
-    descripcion VARCHAR(650)
+    descripcion VARCHAR(255)
 );
 
 CREATE TABLE ira_proyecto (
@@ -182,7 +182,7 @@ CREATE TABLE universidad_programa_academico (
 CREATE TABLE rep (
     id_rep BIGINT IDENTITY(1,1),
     id_proyecto BIGINT,
-    descripcion VARCHAR(650)
+    descripcion VARCHAR(255)
 );
 
 CREATE TABLE rep_proyecto (
