@@ -1,4 +1,5 @@
 -- Creación de las tablas para PostgreSQL sin claves ni restricciones
+
 CREATE TABLE proyecto (
     id_proyecto SERIAL,
     id_tipo INT,
@@ -8,7 +9,7 @@ CREATE TABLE proyecto (
 );
 
 CREATE TABLE evaluacion (
-    id_evaluacion SERIAL,
+    id_evaluacion SERIAL, 
     puntaje NUMERIC(5,2),
     comentario TEXT,
     id_proyecto INT,
@@ -16,7 +17,7 @@ CREATE TABLE evaluacion (
 );
 
 CREATE TABLE asignatura (
-    id_asignatura SERIAL,
+    id_asignatura SERIAL, 
     id_programa INT,
     departamento VARCHAR(30),
     nombre VARCHAR(30),
@@ -57,7 +58,7 @@ CREATE TABLE entregable (
 );
 
 CREATE TABLE tipo_entregable (
-    id_tipo_entregable SERIAL,
+    id_tipo_entregable SERIAL, 
     tipo_entregable VARCHAR(30),
     descripcion TEXT
 );
@@ -66,11 +67,6 @@ CREATE TABLE linea_de_investigacion (
     id_linea SERIAL,
     linea_investigacion VARCHAR(30),
     descripcion TEXT
-);
-
-CREATE TABLE linea_de_investigacion_proyecto (
-    id_linea INT,
-    id_proyecto INT
 );
 
 CREATE TABLE profesor (
@@ -165,7 +161,7 @@ CREATE TABLE prestamo_insumo (
 
 CREATE TABLE universidad (
     id_universidad SERIAL,
-    id_municipio VARCHAR(30),
+    id_municipio INT,
     nombre VARCHAR(30),
     sede VARCHAR(30)
 );
@@ -208,7 +204,7 @@ CREATE TABLE invitado (
 CREATE TABLE municipio (
     id_municipio SERIAL,
     municipio VARCHAR(20),
-    id_region VARCHAR(10)
+    id_region INT
 );
 
 CREATE TABLE region (
@@ -231,4 +227,3 @@ CREATE TABLE taller_proyecto (
     id_proyecto INT,
     id_taller INT
 );
-
