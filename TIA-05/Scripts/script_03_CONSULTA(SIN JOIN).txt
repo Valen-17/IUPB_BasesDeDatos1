@@ -1,0 +1,28 @@
+-- 1. Listar todos los animales ordenados por fecha de nacimiento
+SELECT id, fecha_nacimiento, disponibilidad
+FROM animal
+ORDER BY fecha_nacimiento;
+
+-- 2. Total de animales por raza
+SELECT id_raza, COUNT(*) AS total_animales
+FROM animal
+GROUP BY id_raza
+ORDER BY total_animales DESC;
+
+-- 3. Promedio de evaluación en todas las participaciones
+SELECT AVG(evaluacion) AS promedio_evaluacion
+FROM participacion;
+
+-- 4. Cantidad de animales disponibles vs no disponibles
+SELECT disponibilidad, COUNT(*) AS cantidad
+FROM animal
+GROUP BY disponibilidad;
+
+-- 5. Total de ventas realizadas y suma de dinero recaudado
+SELECT COUNT(*) AS total_ventas, SUM(precio) AS total_recaudado
+FROM venta;
+
+-- 6. Número de participaciones por evento
+SELECT id_evento, COUNT(*) AS total_participaciones
+FROM participacion
+GROUP BY id_evento;
